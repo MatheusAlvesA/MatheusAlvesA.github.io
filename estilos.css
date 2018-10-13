@@ -1,0 +1,104 @@
+body {
+    background-color: black;
+}
+
+body::-webkit-scrollbar { 
+  display: none;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+h1 {
+  font-family: Trebuchet MS, sans-serif;
+  color: white;
+  font-size: 35pt;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.caixa_circulos {
+  width: 95vmin;
+  height: 95vmin;
+  margin: auto;
+}
+
+.circulo {
+  position: absolute;
+  max-width: 95vmin;
+  max-height: 95vmin;
+}
+
+.contato {
+  display: inline-block;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  width: 15%;
+}
+
+.rotacionar-horario {
+  -webkit-animation:rot-horario 90s linear infinite;
+  -moz-animation:rot-horario 90s linear infinite;
+  animation:rot-horario 90s linear infinite;
+}
+
+.rotacionar-antiHorario {
+  -webkit-animation:rot-antiHorario 90s linear infinite;
+  -moz-animation:rot-antiHorario 90s linear infinite;
+  animation:rot-antiHorario 90s linear infinite;
+}
+
+@-moz-keyframes rot-horario { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes rot-horario { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes rot-horario { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes rot-antiHorario { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes rot-antiHorario { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes rot-antiHorario { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+#infos {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  top: 30vmin;
+  width: 52vmin;
+  height: 35vmin;
+}
+
+#infos_rodape {
+  margin-top: 100px;
+  width: auto;
+  margin: auto;
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+    .portrait {
+      display: block;
+    }
+    .landscape {
+      display: none;
+    }
+    .contato {
+      margin-left: 5vw;
+      margin-right: 5vw;
+      width: 15%;
+    }
+    h1 {
+      font-size: 5vmax;
+    }
+    #corpo {
+      margin-top: 10vh;
+    }
+}
+
+@media (orientation: landscape) {
+    .portrait {
+      display: none;
+    }
+    .landscape {
+      display: inline-block;
+    }
+}
